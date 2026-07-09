@@ -566,17 +566,17 @@
   <section id="cost">
     <div class="sec-head"><span class="k">07</span></div>
     <h2>成本评估与轻量迁移建议</h2>
-    <p class="lead">加入新前提后重新算账：<b>老 App 不再投放、新用户全部进新 App、老 App 付费用户仅约 1500（韩沙为其子集）</b>。结论是——别把它当系统工程，用「产研一次性脚本 + 商店优惠码」的极轻方式迁。</p>
+    <p class="lead">加入新前提后重新算账：<b>老 App 不再投放、新用户全部进新 App、老 App 付费用户仅约 1500，其中韩沙占绝大多数（约 1300+）、马来占比很小</b>。结论是——别把它当系统工程，用「产研一次性脚本 + 商店优惠码」的极轻方式迁。</p>
 
     <div class="kpis">
-      <div class="kpi"><div class="v">≈1500</div><div class="l">老 App 付费用户总数（含马来）</div></div>
-      <div class="kpi"><div class="v">≈600–1000</div><div class="l">值得迁移的韩沙付费用户（估算）</div></div>
+      <div class="kpi"><div class="v">≈1500</div><div class="l">老 App 付费用户总数（马来占比很小）</div></div>
+      <div class="kpi"><div class="v">≈1300+</div><div class="l">可迁移的韩沙付费用户（占 1500 绝大多数）</div></div>
       <div class="kpi"><div class="v">衰减资产</div><div class="l">老 App 停投放 + 新用户全去新 App</div></div>
     </div>
 
     <div class="callout good">
       <span class="ico">🎯</span>
-      <div><b>核心判断：</b>这是一次几百人的一次性小批量迁移，用 <b>「产研一次性导名单 + 商店订阅优惠码换轨」</b> 就能做完，<b>不值得建重型服务端权益系统</b>。</div>
+      <div><b>核心判断：</b>可迁盘子约 <b>1300+ 人（韩沙为主，马来占比很小）</b>，仍是一次千级的一次性小批量迁移，用 <b>「产研一次性导名单 + 商店订阅优惠码换轨」</b> 就能做完，<b>不值得建重型服务端权益系统</b>。</div>
     </div>
 
     <h3>产研成本：重型 vs 轻型</h3>
@@ -623,7 +623,7 @@
       <thead><tr><th>渠道</th><th>能力</th><th>注意</th></tr></thead>
       <tbody>
         <tr><td class="col-k">Apple · Offer Codes</td><td>批量生成订阅优惠码，用户在新 App 兑换得等值免费期，<b>免费期后自动转为新 App 付费订阅</b></td><td>需在 App Store Connect 配置订阅优惠；新 App 订阅须已上架</td></tr>
-        <tr><td class="col-k">Google Play · 促销码 / 优惠</td><td>同理发放免费 / 折扣期，用户在新 App 兑换</td><td><span class="warnmark">促销码有数量 / 配额限制</span>，几百～1000 量级可能需分批，须确认</td></tr>
+        <tr><td class="col-k">Google Play · 促销码 / 优惠</td><td>同理发放免费 / 折扣期，用户在新 App 兑换</td><td><span class="warnmark">促销码有数量 / 配额限制</span>，~1300 量级大概率需分批，须确认</td></tr>
         <tr><td class="col-k"><span class="no">兜底 · 产研批量写库</span></td><td>基于老付费状态给新 App 账号授予会员</td><td><span class="no">违反卡点 4（两 App 关联），不可用</span></td></tr>
       </tbody>
     </table>
@@ -700,7 +700,7 @@
     <ul style="font-size:14px;color:#3a4150">
       <li><b>「补差价」技术上基本不可行：</b>App Store / Google Play 都没有「补差价」原生机制，硬做很别扭 —— 这条几乎否掉 B。</li>
       <li><b>真正的流失点在「首次续费的价格跳变」，不在「迁移时」：</b>讨论重心应放在如何软化续费跳价（过渡价 + 提前告知）。且苹果 / 谷歌对自动续订涨价<b>本就要求用户重新同意</b>，本身带流失风险。</li>
-      <li><b>盘子太小，差价收入微薄：</b>韩沙付费才 ~600–1000 人，为这点差价加迁移障碍不划算；迁移首要目标是「别流失」，不是「多收这一笔」。</li>
+      <li><b>盘子小，差价收入微薄：</b>韩沙付费约 1300+ 人、客单价又低于新 App 月包，绝对差价收入依然很有限；为这点差价加迁移障碍不划算，迁移首要目标是「别流失」，不是「多收这一笔」。</li>
       <li><b>公平性：</b>用户非自愿迁移，若还要多付钱，容易造成口碑与品牌反噬。</li>
     </ul>
 
@@ -813,7 +813,7 @@
         </tr>
         <tr>
           <td class="col-k">5</td>
-          <td><b>Google Play 促销码配额</b>是否够 ~1000（不够则分批）</td>
+          <td><b>Google Play 促销码配额</b>是否够 ~1300（不够则分批）</td>
           <td>产研 / 运营</td>
           <td>配额有限，影响韩沙全量发码的节奏</td>
           <td>🟡 中</td>
