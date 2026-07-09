@@ -95,6 +95,17 @@
   .callout.info{background:var(--brand-soft);border:1px solid #d9ddff;color:#2a2f66}
   .callout.good{background:var(--green-soft);border:1px solid #bfe6cf;color:#0d5f30}
   .callout.warn{background:var(--amber-soft);border:1px solid #f0dcb4;color:#7a4b06}
+  .callout.danger{background:#fdecec;border:1px solid #f3c2c2;color:#8a1f1f}
+  .callout code,.bindflow code{background:rgba(0,0,0,.06);padding:1px 6px;border-radius:5px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  /* Binding flow (vertical) */
+  .bindflow{margin-top:18px;display:flex;flex-direction:column;align-items:stretch;gap:2px}
+  .bindflow .bf-row{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(135deg,#fff,#f7f8ff);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+  .bindflow .bf-n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .bindflow .bf-c{display:flex;flex-direction:column;gap:3px;font-size:13.5px}
+  .bindflow .bf-c b{font-size:14px}
+  .bindflow .bf-c span{color:var(--muted);line-height:1.55}
+  .bindflow .bf-arr{align-self:center;color:var(--brand);font-weight:800;font-size:18px;line-height:1}
 
   /* Tables */
   .tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:16px;font-size:14px;overflow:hidden;border:1px solid var(--line);border-radius:12px}
@@ -608,7 +619,7 @@
     <table class="tbl">
       <thead><tr><th>项目</th><th>说明</th><th>量级</th></tr></thead>
       <tbody>
-        <tr><td class="col-k">触达成本</td><td>产研导出名单 → 短信 / 邮件 / 外呼群发，一次性</td><td><span class="yes">很低</span></td></tr>
+        <tr><td class="col-k">触达成本</td><td>产研仅导出名单；<b>短信 / 邮件 / 外呼群发等触达动作由业务 / 运营执行</b>，一次性</td><td><span class="yes">很低</span></td></tr>
         <tr><td class="col-k">迁移激励</td><td>等值会员 + 加赠（如送几周周包），通过优惠码发放</td><td><span class="yes">可忽略</span></td></tr>
         <tr><td class="col-k">客服 / SOP</td><td>千级量级可人工兜底，无需自动化</td><td><span class="yes">低</span></td></tr>
         <tr><td class="col-k">双重扣费（须处理）</td><td>给了新 App 会员、老 App 订阅仍在续订 → 用户白交钱</td><td><span class="warnmark">需话术兜底</span></td></tr>
@@ -638,7 +649,7 @@
       <div class="arrow">→</div>
       <div class="step"><div class="n">STEP 2</div><div class="tt">生成优惠码</div><div class="dd">App Store Connect / Play Console 批量生成</div></div>
       <div class="arrow">→</div>
-      <div class="step"><div class="n">STEP 3</div><div class="tt">站外触达</div><div class="dd">短信 / 邮件 / 外呼发码，告知搬新 App</div></div>
+      <div class="step"><div class="n">STEP 3</div><div class="tt">站外触达</div><div class="dd">业务 / 运营执行短信 / 邮件 / 外呼发码，告知搬新 App</div></div>
       <div class="arrow">→</div>
       <div class="step"><div class="n">STEP 4</div><div class="tt">新 App 兑换</div><div class="dd">以全新用户注册 + 兑码得等值 + 加赠会员</div></div>
       <div class="arrow">→</div>
@@ -648,6 +659,54 @@
     <div class="callout warn">
       <span class="ico">⚠️</span>
       <div><b>三个关键点：</b>① 导营销名单是产研一次性脚本，授权用新 App 通用优惠码，<b>全程不碰后台、不打通两端</b>；② 用优惠码而非跨 App 放权，<b>同时绕开卡点 2（订阅不能跨 App）与卡点 4（两 App 不能关联）</b>；③ 触达话术必须<b>提示取消老 App 自动续订</b>（或让加赠时长盖过剩余订阅期），防止白交钱。服务端权益中心因违反卡点 4 <b>永久作废</b>。</div>
+    </div>
+
+    <h3>服务端权益绑定机制（手机号注册也能打通）</h3>
+    <div class="callout danger">
+      <span class="ico">🚫</span>
+      <div><b>先破一个常见误解：</b>用户在 App 外兑换优惠码时，全程只发生在 App Store / Play 商店里，<b>只跟用户的 Apple ID / Google 账号打交道，后端零参与、也拿不到手机号</b>。所以<b>不存在「兑换时就把手机号 ↔ SKU 绑好、事后去查」这一步</b>。真正的「钥匙」是订阅的 <code>originalTransactionId</code>（Apple）/ <code>purchaseToken</code>（Google），它绑定的是 Apple ID / Google 账号。</div>
+    </div>
+
+    <div class="callout info">
+      <span class="ico">🔑</span>
+      <div><b>正确逻辑：</b>绑定关系<b>不是在兑换时建立、事后查表</b>，而是在<b>「用户登录新 App 后首次上报收据、服务端向商店验真」的那一刻当场建立</b>。手机号是在用户登录时才第一次和这条订阅产生关系的——所以手机号注册完全不影响打通。</div>
+    </div>
+
+    <div class="bindflow">
+      <div class="bf-row">
+        <div class="bf-n">1</div>
+        <div class="bf-c"><b>App 外兑换（后端不知情）</b><span>用户用<b>自己设备上的 Apple ID / Google 账号</b>兑换优惠码，权益只挂到这个商店账号上；此刻你的后端没有任何手机号信息。</span></div>
+      </div>
+      <div class="bf-arr">↓</div>
+      <div class="bf-row">
+        <div class="bf-n">2</div>
+        <div class="bf-c"><b>用户登录新 App</b><span>以全新身份用<b>手机号 / 邮箱</b>注册并登录新 App 自己的账号。</span></div>
+      </div>
+      <div class="bf-arr">↓</div>
+      <div class="bf-row">
+        <div class="bf-n">3</div>
+        <div class="bf-c"><b>客户端读收据 → 传服务端</b><span>StoreKit 取 <code>Transaction</code>（Apple）/ Billing 取 <code>purchaseToken</code>（Google），连同登录态发给<b>新 App 服务端</b>。</span></div>
+      </div>
+      <div class="bf-arr">↓</div>
+      <div class="bf-row">
+        <div class="bf-n">4</div>
+        <div class="bf-c"><b>服务端向商店验真</b><span>Apple：App Store Server API 校验 → 拿 <code>originalTransactionId</code> + 到期时间；Google：Play Developer API <code>subscriptionsv2.get</code> → 拿状态 + 到期时间。</span></div>
+      </div>
+      <div class="bf-arr">↓</div>
+      <div class="bf-row">
+        <div class="bf-n">5</div>
+        <div class="bf-c"><b>当场新建映射 → 标记会员</b><span>写入 <code>originalTransactionId / purchaseToken ↔ 手机账号</code>（唯一约束：一条订阅只归一个账号），该账号即会员。</span></div>
+      </div>
+      <div class="bf-arr">↓</div>
+      <div class="bf-row">
+        <div class="bf-n">6</div>
+        <div class="bf-c"><b>状态持续同步（不依赖客户端）</b><span>续费 / 退款 / 过期由商店用同一把钥匙推送：Apple <b>ASSN v2</b> / Google <b>RTDN</b> → 查表找到账号 → 更新 <code>status / expires_at</code>。</span></div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <span class="ico">🧩</span>
+      <div><b>结论：</b>兑换环节<b>不需要任何「手机号绑定」开发</b>；需要的是新 App 具备<b>「服务端收据校验 → 绑定当前登录账号 → 通知同步」</b>这套能力——这本就是订阅类 App 的标配，通常已经有。<b>App 内兑换码输入框是可选项</b>（提升转化），不是打通的必要条件。</div>
     </div>
   </section>
 
@@ -812,34 +871,41 @@
         </tr>
         <tr>
           <td class="col-k">5</td>
+          <td><b>新 App 具备「服务端收据校验 + 账号绑定 + ASSN/RTDN 通知同步」能力</b>（订阅类 App 标配，须确认是否已就绪）</td>
+          <td>产研</td>
+          <td>整套换轨的技术前提：优惠码兑换后靠它把会员绑定到用户登录账号并持续同步状态，缺则权益落不到账号（详见 07 · 服务端权益绑定机制）</td>
+          <td><span class="warnmark">🟠 高</span></td>
+        </tr>
+        <tr>
+          <td class="col-k">6</td>
           <td><b>Google Play 促销码配额</b>是否够覆盖韩沙付费量（不够则分批）</td>
           <td>产研 / 运营</td>
           <td>配额有限，影响韩沙全量发码的节奏</td>
           <td>🟡 中</td>
         </tr>
         <tr>
-          <td class="col-k">6</td>
+          <td class="col-k">7</td>
           <td><b>Facebook / AppID 用户可触达占比</b>（能否拿到有效邮箱）</td>
           <td>数据 / 运营</td>
           <td>直接决定迁移触达的天花板</td>
           <td>🟡 中</td>
         </tr>
         <tr>
-          <td class="col-k">7</td>
+          <td class="col-k">8</td>
           <td><b>产研一次性「营销名单」导出脚本</b>（韩沙付费用户 + 联系方式）</td>
           <td>产研</td>
           <td>触达的输入；依赖事项 1 放行</td>
           <td>🟡 中</td>
         </tr>
         <tr>
-          <td class="col-k">8</td>
+          <td class="col-k">9</td>
           <td><s>老 App 改名：是否把原品牌名让给新 App</s> → <b>已决定：让给新 App</b>；剩协调改名 / 用名时点</td>
           <td>产品 / 市场</td>
           <td>改名不影响订阅；品牌名归新 App 后，原名搜索命中新 App（自然迁移入口）</td>
           <td><span class="yes">✅ 已确认</span></td>
         </tr>
         <tr>
-          <td class="col-k">9</td>
+          <td class="col-k">10</td>
           <td><b>马来后续是否迁移</b>及老 App 最终下架时点</td>
           <td>业务</td>
           <td>本期不决策，复盘期评估（详见 10）</td>
@@ -850,7 +916,7 @@
     </div>
     <div class="callout warn">
       <span class="ico">🧭</span>
-      <div><b>建议顺序：</b>先拿事项 1（法务关联边界）+ 事项 3（隐私合规）的结论 —— 这两条决定「主动迁移到底能不能做」；能做，再推进 2 / 4 / 5 / 6 / 7 的落地细节。</div>
+      <div><b>建议顺序：</b>先拿事项 1（法务关联边界）+ 事项 3（隐私合规）的结论 —— 这两条决定「主动迁移到底能不能做」；能做，再推进 2 / 4 / 5 / 6 / 7 / 8 的落地细节。</div>
     </div>
   </section>
 
