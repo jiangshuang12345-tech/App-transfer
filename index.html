@@ -221,7 +221,7 @@
     <h1>Dino AI 新老 App 用户迁移方案</h1>
     <p>明确老 App 用户是否迁移至新 App，系统对比「迁移」与「不迁移」两条路径的优势 & 劣势，并给出可落地的渐进式迁移策略与成功指标。</p>
     <div class="meta">
-      <span>版本 v1.6</span>
+      <span>版本 v1.7</span>
       <span>更新 2026-07-09</span>
       <span>迁移：韩国 · 沙特　｜　暂留老 App：马来　｜　新增：印尼 · 越南</span>
     </div>
@@ -461,7 +461,7 @@
     </div>
     <div class="callout warn">
       <span class="ico">⚠️</span>
-      <div><b>Push 属灰色地带：</b>推送由老 App 的证书发出，虽显示在 App 外，但源头是老 App，<b>能否用于迁移引导需法务确认</b>。此外，站外触达覆盖度直接决定迁移触达上限，Facebook / AppID 用户可能较难触达，须提前评估可触达占比。</div>
+      <div><b>触达覆盖度是迁移触达上限：</b>站外触达能覆盖多少人，直接决定迁移的天花板。Facebook / AppID 用户可能较难触达（未必能拿到有效邮箱），须提前评估可触达占比。</div>
     </div>
 
     <h3>卡点 2 · App Store / Google Play 订阅 SKU 如何迁移</h3>
@@ -513,7 +513,7 @@
 
     <div class="stages">
       <div class="stage"><div class="st">① 权益中心</div><div class="sn">服务端唯一事实源</div><div class="sd">接 App Store Server Notifications v2 + Google Play RTDN，实时同步账号付费状态与到期时间</div></div>
-      <div class="stage"><div class="st">② 站外触达</div><div class="sn">老 App 之外拉动下载</div><div class="sd">短信 / 邮件 / 外呼 / ASO · 社媒（Push 待法务确认），不在老 App 内做任何引导</div></div>
+      <div class="stage"><div class="st">② 站外触达</div><div class="sn">老 App 之外拉动下载</div><div class="sd">短信 / 邮件 / 外呼 / ASO · 社媒，不在老 App 内做任何引导</div></div>
       <div class="stage"><div class="st">③ 静默识别</div><div class="sn">同账号登录即识别</div><div class="sd">登录方式一致，新 App 登录后按后端权益恢复进度并放权，无需老 App 动作</div></div>
       <div class="stage"><div class="st">④ 换轨续费</div><div class="sn">新 App 自有 SKU</div><div class="sd">老订阅存续期照常放权；到期 / 取消后在新 App 内以新 SKU 续费，含双重扣费防护</div></div>
     </div>
@@ -712,7 +712,7 @@
 
     <div class="callout warn">
       <span class="ico">⚠️</span>
-      <div><b>前置阻塞（须在灰度期前解决）：</b>① 新 App 订阅商品已上架、可配置优惠码；② 确认 Google Play 促销码配额是否够用（不够则分批或走产研写库兜底）；③ 产研确认新 App 能否同账号登录并恢复学习进度；④ 法务确认 Push 是否可用于触达、评估 Facebook / AppID 用户可触达占比。</div>
+      <div><b>前置阻塞（须在灰度期前解决）：</b>① 新 App 订阅商品已上架、可配置优惠码；② 确认 Google Play 促销码配额是否够用（不够则分批或走产研写库兜底）；③ 产研确认新 App 能否同账号登录并恢复学习进度；④ 评估 Facebook / AppID 用户可触达占比。</div>
     </div>
     <div class="callout info">
       <span class="ico">🏷️</span>
@@ -742,7 +742,7 @@
   </section>
 
   <footer>
-    Dino AI · 新老 App 用户迁移方案 · v1.6 · 更新于 2026-07-09 · 本文档为内部决策参考。
+    Dino AI · 新老 App 用户迁移方案 · v1.7 · 更新于 2026-07-09 · 本文档为内部决策参考。
   </footer>
 
 </div>
