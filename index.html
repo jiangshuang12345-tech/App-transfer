@@ -206,9 +206,10 @@
   <div class="nav-group">落地建议</div>
   <nav class="nav">
     <a href="#cost"><span class="num">07</span> 成本评估与轻量迁移</a>
-    <a href="#recommend"><span class="num">08</span> 结论与建议</a>
-    <a href="#strategy"><span class="num">09</span> 渐进式迁移策略</a>
-    <a href="#metrics"><span class="num">10</span> 成功指标</a>
+    <a href="#pricing"><span class="num">08</span> 价格差异处理（待讨论）</a>
+    <a href="#recommend"><span class="num">09</span> 结论与建议</a>
+    <a href="#strategy"><span class="num">10</span> 渐进式迁移策略</a>
+    <a href="#metrics"><span class="num">11</span> 成功指标</a>
   </nav>
 </aside>
 
@@ -220,7 +221,7 @@
     <h1>Dino AI 新老 App 用户迁移方案</h1>
     <p>明确老 App 用户是否迁移至新 App，系统对比「迁移」与「不迁移」两条路径的优势 & 劣势，并给出可落地的渐进式迁移策略与成功指标。</p>
     <div class="meta">
-      <span>版本 v1.5</span>
+      <span>版本 v1.6</span>
       <span>更新 2026-07-09</span>
       <span>迁移：韩国 · 沙特　｜　暂留老 App：马来　｜　新增：印尼 · 越南</span>
     </div>
@@ -617,9 +618,67 @@
     </div>
   </section>
 
-  <!-- 08 recommend -->
-  <section id="recommend">
+  <!-- 08 pricing -->
+  <section id="pricing">
     <div class="sec-head"><span class="k">08</span></div>
+    <h2>价格差异处理（待讨论）</h2>
+    <p class="lead"><b>老 App 月包价格低于新 App。</b>迁移这批老付费用户时，是「免费给等值新权益」还是「让用户补差价」，需要业务 / 财务共同讨论决策。</p>
+
+    <div class="callout warn">
+      <span class="ico">🗳️</span>
+      <div><b>这是一个开放决策点（待讨论）：</b>核心权衡是「迁移留存」与「价格体系 / 收入」之间的取舍。下方为可选方案与判断依据，并附一个倾向建议供讨论。</div>
+    </div>
+
+    <h3>可选方案</h3>
+    <div class="tbl-scroll">
+    <table class="tbl">
+      <thead><tr><th>方案</th><th>做法</th><th>优点</th><th>缺点</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-k"><span class="yes">A 免费平移等值权益</span></td>
+          <td>按剩余时长免费给等值新权益，续费时按新价</td>
+          <td>迁移零摩擦、留存最好、最省事</td>
+          <td>续费时价格跳变，可能在「首次续费」流失</td>
+        </tr>
+        <tr>
+          <td class="col-k"><span class="no">B 补差价</span></td>
+          <td>让用户补上差价才给新权益</td>
+          <td>保住价格体系 / 收入</td>
+          <td>迁移摩擦极大、几乎劝退；非自愿迁移却多付钱＝惩罚感；<b>商店无「补差价」原生能力，落地困难</b></td>
+        </tr>
+        <tr>
+          <td class="col-k"><span class="yes">C 老价延续期（过渡）</span></td>
+          <td>迁移后保留老价一段时间 / 首个续费周期，再逐步过渡到新价</td>
+          <td>公平、缓解续费跳价流失、口碑好</td>
+          <td>需为这批用户配一档低价 SKU / 优惠，短期收入略低</td>
+        </tr>
+        <tr>
+          <td class="col-k">D 永久保留老价</td>
+          <td>迁移用户永远享老价</td>
+          <td>留存最大</td>
+          <td>永久收入拖累、价格体系长期混乱</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>关键判断点</h3>
+    <ul style="font-size:14px;color:#3a4150">
+      <li><b>「补差价」技术上基本不可行：</b>App Store / Google Play 都没有「补差价」原生机制，硬做很别扭 —— 这条几乎否掉 B。</li>
+      <li><b>真正的流失点在「首次续费的价格跳变」，不在「迁移时」：</b>讨论重心应放在如何软化续费跳价（过渡价 + 提前告知）。且苹果 / 谷歌对自动续订涨价<b>本就要求用户重新同意</b>，本身带流失风险。</li>
+      <li><b>盘子太小，差价收入微薄：</b>韩沙付费才 ~600–1000 人，为这点差价加迁移障碍不划算；迁移首要目标是「别流失」，不是「多收这一笔」。</li>
+      <li><b>公平性：</b>用户非自愿迁移，若还要多付钱，容易造成口碑与品牌反噬。</li>
+    </ul>
+
+    <div class="callout good">
+      <span class="ico">💡</span>
+      <div><b>倾向建议（供讨论）：A + C 组合。</b>迁移期<b>免费平移等值时长</b>（用优惠码发放、零摩擦）；对续费价格跳变用<b>一段老价延续期或首续促销价</b>缓冲，并<b>提前告知</b>后续按新价续费。既不牺牲迁移转化，又避免续费集中流失，价格长期仍归一。<b>待业务 / 财务确认：过渡期时长、首续促销价定价。</b></div>
+    </div>
+  </section>
+
+  <!-- 09 recommend -->
+  <section id="recommend">
+    <div class="sec-head"><span class="k">09</span></div>
     <h2>结论与建议</h2>
     <div class="rec">
       <span class="badge">推荐执行迁移</span>
@@ -633,12 +692,13 @@
       <p style="margin:12px 0 0;color:#2b3040"><b>但要「轻着迁」：</b>付费用户仅约 1500（韩沙为子集），<b>不建重型权益系统</b>，走「产研一次性导名单 + 商店优惠码换轨」的极轻路径（详见 07）。</p>
       <p style="margin:10px 0 0;color:#2b3040"><b>本期范围与边界：</b>仅迁移<b>韩国、沙特</b>；<b>马来暂不迁移</b>、留老 App；老 App<b>不再投放、不下架、只改名</b>，作为衰减资产自然萎缩；<b>新用户全部进新 App</b>。</p>
       <p style="margin:10px 0 0;color:#2b3040"><b>唯一会改口的情形：</b>若商店优惠码数量 / 规则无法覆盖，则退到产研一次性批量写库兜底 —— 方向不变，仍是「迁、轻着迁」。</p>
+      <p style="margin:10px 0 0;color:#2b3040"><b>待讨论决策点：</b>老 App 月包价低于新 App，迁移时「免费平移 vs 补差价」需业务 / 财务拍板（详见 <a href="#pricing">08</a>，倾向免费平移 + 续费价格过渡缓冲）。</p>
     </div>
   </section>
 
-  <!-- 09 strategy -->
+  <!-- 10 strategy -->
   <section id="strategy">
-    <div class="sec-head"><span class="k">09</span></div>
+    <div class="sec-head"><span class="k">10</span></div>
     <h2>渐进式迁移策略</h2>
     <p class="lead">按 07 的轻量路径分阶段推进，先小范围验证再全量；<b>所有触达均在老 App 之外进行</b>。</p>
 
@@ -660,9 +720,9 @@
     </div>
   </section>
 
-  <!-- 10 metrics -->
+  <!-- 11 metrics -->
   <section id="metrics">
-    <div class="sec-head"><span class="k">10</span></div>
+    <div class="sec-head"><span class="k">11</span></div>
     <h2>成功指标（参考）</h2>
     <p class="lead">用于灰度与全量阶段的效果衡量与放量决策。</p>
     <div class="tbl-scroll">
@@ -682,7 +742,7 @@
   </section>
 
   <footer>
-    Dino AI · 新老 App 用户迁移方案 · v1.5 · 更新于 2026-07-09 · 本文档为内部决策参考。
+    Dino AI · 新老 App 用户迁移方案 · v1.6 · 更新于 2026-07-09 · 本文档为内部决策参考。
   </footer>
 
 </div>
