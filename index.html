@@ -107,6 +107,14 @@
   .bindflow .bf-c span{color:var(--muted);line-height:1.55}
   .bindflow .bf-arr{align-self:center;color:var(--brand);font-weight:800;font-size:18px;line-height:1}
 
+  /* Script templates */
+  .scripts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-top:16px}
+  .script{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+  .script .sh{display:flex;align-items:center;gap:8px;padding:11px 15px;background:linear-gradient(135deg,#f2f3ff,#eef0ff);border-bottom:1px solid var(--line);font-weight:700;font-size:13.5px;color:#2a2f66}
+  .script .sh .badge{margin-left:auto;font-size:11px;font-weight:700;color:var(--muted);background:#fff;border:1px solid var(--line);padding:2px 8px;border-radius:999px}
+  .script .sb{padding:14px 15px;font-size:13px;line-height:1.7;color:#2b3040;white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#fcfcfe;flex:1}
+  .script .sb .var{color:var(--brand);font-weight:700}
+
   /* Tables */
   .tbl{width:100%;border-collapse:separate;border-spacing:0;margin-top:16px;font-size:14px;overflow:hidden;border:1px solid var(--line);border-radius:12px}
   .tbl th,.tbl td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
@@ -712,6 +720,82 @@
     <div class="callout warn">
       <span class="ico">🧩</span>
       <div><b>结论：</b>兑换环节<b>不需要任何「手机号绑定」开发</b>；需要的是新 App 具备<b>「服务端收据校验 → 绑定当前登录账号 → 通知同步」</b>这套能力——这本就是订阅类 App 的标配，通常已经有。<b>App 内兑换码输入框是可选项</b>（提升转化），不是打通的必要条件。</div>
+    </div>
+
+    <h3>触达话术模板（引导搬到 Dino AI · 一人一码）</h3>
+    <div class="callout danger">
+      <span class="ico">⚖️</span>
+      <div><b>合规前置：</b>以下话术涉及<b>用老 App 用户数据触达</b>且需<b>措辞谨慎</b>——最终文案必须经<b>法务确认</b>（事项 1 关联边界 / 事项 3 隐私同意）。落地时把 <span class="var">{昵称}</span>、<span class="var">{兑换码}</span>、<span class="var">{兑换链接}</span> 逐人替换；<b>目标用户在韩国 / 沙特，须本地化为韩语 / 阿拉伯语</b>，下方中文为母版。</div>
+    </div>
+
+    <div class="callout info">
+      <span class="ico">🎯</span>
+      <div><b>话术要传达 4 件事：</b>① Dino AI 全新升级、值得搬；② 点专属链接<b>免费领会员</b>（等值 + 加赠）；③ 请在<b>常用手机、同一个 App Store / Google Play 账号</b>上兑换并打开新 App；④ 记得<b>取消旧订阅</b>，避免重复扣费。</div>
+    </div>
+
+    <div class="scripts">
+      <div class="script">
+        <div class="sh">📱 短信 · 首次触达 <span class="badge">≤ 70 字</span></div>
+        <div class="sb"><span class="var">{昵称}</span>您好，Dino AI 全新升级上线！为感谢您的支持，专属会员礼包已备好，点击免费领取（含额外赠送时长）：
+<span class="var">{兑换链接}</span>
+请用常用手机、同一应用商店账号打开。退订请回复 TD。</div>
+      </div>
+
+      <div class="script">
+        <div class="sh">✉️ 邮件 · 完整版 <span class="badge">含步骤 + 退订指引</span></div>
+        <div class="sb">主题：<span class="var">{昵称}</span>，您的 Dino AI 专属会员已就绪 🎁
+
+<span class="var">{昵称}</span> 您好，
+
+Dino AI 已全新升级，带来更丰富的学习内容与体验。为回馈您，我们为您准备了<b>专属会员礼包</b>（等值权益 + 额外赠送时长）。
+
+▶ 三步领取：
+1. 在 App Store / Google Play 搜索「Dino AI」下载新版；
+   （请使用您<b>常用手机</b>、及<b>平时购买用的同一个</b> App Store / Google Play 账号）
+2. 打开专属链接兑换：<span class="var">{兑换链接}</span>
+   或在兑换页输入兑换码：<span class="var">{兑换码}</span>
+3. 打开 Dino AI，用手机号注册 / 登录，会员将自动到账。
+
+⚠ 重要：为避免重复扣费，领取后请<b>取消旧版的自动续订</b>：
+· iPhone：设置 → 顶部 Apple 账户 → 订阅 → 选择旧订阅 → 取消订阅
+· 安卓：Play 商店 → 头像 → 付款和订阅 → 订阅 → 选择旧订阅 → 取消
+
+温馨提示：新版内容全面升级，学习进度将从新版重新开始。
+
+祝学习愉快，
+Dino AI 团队</div>
+      </div>
+
+      <div class="script">
+        <div class="sh">📞 外呼 · 通话要点 <span class="badge">口播提纲</span></div>
+        <div class="sb">1. 自报＆核身：您好，这里是 Dino AI 团队，请问是 <span class="var">{昵称}</span> 吗？
+2. 目的：Dino AI 全新升级，给您准备了专属会员礼包，免费领取。
+3. 引导：稍后给您发条短信/邮件，点里面的专属链接就能领；请用常用手机、同一个应用商店账号。
+4. 关键提醒：领取后记得在手机「订阅」里取消旧版自动续订，避免多扣费。
+5. 答疑：进度会从新版重新开始；如兑换遇到问题可随时联系客服。
+6. 结束：确认已收到链接 → 感谢并道别。</div>
+      </div>
+
+      <div class="script">
+        <div class="sh">🔁 短信 · 催兑提醒（未兑换） <span class="badge">D+3 / D+7</span></div>
+        <div class="sb"><span class="var">{昵称}</span>，您的 Dino AI 专属会员礼包即将到期，还没领哦～ 点击一键领取（含赠送时长）：
+<span class="var">{兑换链接}</span>
+过期不候，记得同一应用商店账号打开。</div>
+      </div>
+
+      <div class="script">
+        <div class="sh">✅ 兑换成功后 · 防双扣提醒 <span class="badge">关键</span></div>
+        <div class="sb"><span class="var">{昵称}</span>，Dino AI 会员已到账，欢迎回来！🎉
+最后一步很重要：请取消旧版的自动续订，以免重复扣费——
+· iPhone：设置 → Apple 账户 → 订阅
+· 安卓：Play 商店 → 付款和订阅 → 订阅
+选择旧订阅并取消即可。</div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <span class="ico">🗣️</span>
+      <div><b>用词红线（须与法务对齐）：</b>① <b>不暗示两 App 属于同一主体 / 强行关联老账号</b>，按"品牌升级 + 邀请体验新 App"表述；② <b>不承诺进度 / 数据迁移</b>（技术上无法同步），坦诚"从新版重新开始"；③ 退订 / 隐私合规话术（如「回复 TD 退订」）按当地法规配置；④ 所有文案本地化为<b>韩语 / 阿拉伯语</b>后再发。</div>
     </div>
   </section>
 
