@@ -204,9 +204,9 @@
     <h1>Dino AI 新老 App 用户迁移方案</h1>
     <p>明确老 App 用户是否迁移至新 App，系统对比「迁移」与「不迁移」两条路径的优势 & 劣势，并给出可落地的渐进式迁移策略与成功指标。</p>
     <div class="meta">
-      <span>版本 v1.0</span>
+      <span>版本 v1.2</span>
       <span>更新 2026-07-09</span>
-      <span>适用：韩国 / 沙特 / 马来（+ 印尼 / 越南）</span>
+      <span>迁移：韩国 · 沙特　｜　暂留老 App：马来　｜　新增：印尼 · 越南</span>
     </div>
   </div>
 
@@ -290,13 +290,43 @@
         <b>关键解读：</b>登录方式一致 → 账号匹配风险极低；会员仅做增量（周包）→ 老用户权益可平滑映射且可作二次运营抓手；国家仅做增量扩张（印尼、越南）→ 迁移属于「向上兼容」，不牺牲任何存量能力。
       </div>
     </div>
+
+    <h3>本期迁移范围（按国家）</h3>
+    <p class="lead">本期<b>仅迁移韩国、沙特</b>；马来暂不迁移、继续留在老 App；印尼 / 越南为新 App 新增市场。</p>
+    <div class="tbl-scroll">
+    <table class="tbl">
+      <thead><tr><th>国家</th><th>本期处置</th><th>承载 App</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td class="col-k">韩国</td><td><span class="yes">✅ 本期迁移</span></td><td>新 App</td><td>付费 / 存量规模大，作为灰度与主迁移对象</td></tr>
+        <tr><td class="col-k">沙特</td><td><span class="yes">✅ 本期迁移</span></td><td>新 App</td><td>随韩国之后扩大迁移</td></tr>
+        <tr><td class="col-k">马来</td><td><span class="warnmark">⏸ 暂不迁移</span></td><td>老 App（改名保留）</td><td>继续在老 App 服务与维护，后续再评估是否迁移</td></tr>
+        <tr><td class="col-k">印尼 / 越南</td><td><span class="diff-new">🆕 新增市场</span></td><td>新 App</td><td>新 App 原生覆盖，直接拉新，无迁移问题</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>老 App 处置：改名、不下架、持续维护</h3>
+    <div class="callout good">
+      <span class="ico">🏷️</span>
+      <div>
+        <b>老 App 本期只改名、不下架</b>，并继续维护（迁移后主要承载马来用户）。改名的技术影响可控：
+        <b>App 显示名变更不影响 Bundle ID / 包名，也不影响已有订阅与已安装用户</b>，老用户的续费与数据均不受影响。改名的常见目的是——App Store / Google Play 应用名唯一，
+        <b>把原品牌名腾出来给新 App 使用</b>。
+      </div>
+    </div>
+    <div class="callout warn">
+      <span class="ico">⚠️</span>
+      <div>
+        <b>由此带来的现实：</b>本期为<b>「双端长期并存」</b>——不是「迁完即下线老 App」。老 App 瘦身为<b>马来专用</b>并持续维护，因此「单端降本」不再是本期收益；收益体现在<b>韩国 / 沙特用户与数据向新 App 归集</b>、老 App 维护范围收窄。
+      </div>
+    </div>
   </section>
 
   <!-- 02 migrate -->
   <section id="migrate">
     <div class="sec-head"><span class="k">02</span></div>
     <h2>迁移方案（推荐路径）</h2>
-    <p class="lead">把老 App 用户引导 / 迁移至新 App，逐步下线老 App。以下为优势与劣势（含缓解措施）。</p>
+    <p class="lead">把韩国 / 沙特老用户迁移至新 App（马来暂留老 App、老 App 改名保留）。以下为优势与劣势（含缓解措施）。</p>
 
     <div class="cols">
       <div class="col-box pro">
@@ -305,8 +335,8 @@
           <li><b>保留存量用户</b><span class="s">老用户直接转化为新 App 用户，省去重新拉新的高成本</span></li>
           <li><b>保留付费用户</b><span class="s">月包 / 年包订阅关系延续，降低付费流失</span></li>
           <li><b>体验统一</b><span class="s">用户集中在新 App，享受周包等新功能与后续迭代</span></li>
-          <li><b>单端维护降本</b><span class="s">逐步下线老 App，减少双端开发 / 客服 / 运营成本</span></li>
-          <li><b>数据归一</b><span class="s">行为 / 付费数据统一沉淀，利于分析与增长决策</span></li>
+          <li><b>老 App 瘦身、职责清晰</b><span class="s">韩国 / 沙特迁出后，老 App 改名保留、专注服务马来，维护范围收窄（本期不下线）</span></li>
+          <li><b>数据归一</b><span class="s">韩国 / 沙特的行为 / 付费数据向新 App 归集，利于分析与增长决策</span></li>
           <li><b>承接新市场</b><span class="s">复用新 App 已覆盖印尼 / 越南的统一投放与增长体系</span></li>
           <li><b>周包引流</b><span class="s">低门槛周包可对老用户做转化 / 复购二次运营</span></li>
         </ul>
@@ -320,7 +350,8 @@
           <li><b>迁移感知打断</b><span class="s">缓解：一键迁移引导页，减少操作步骤</span></li>
           <li><b>老用户流失</b><span class="s">缓解：迁移激励，如赠送周包 / 续费折扣</span></li>
           <li><b>客服咨询上升</b><span class="s">缓解：提前备 FAQ、客服 SOP、迁移专属入口</span></li>
-          <li><b>跨国数据合规</b><span class="s">缓解：韩国 / 沙特 / 马来隐私合规分区域核对</span></li>
+          <li><b>跨国数据合规</b><span class="s">缓解：韩国 / 沙特隐私合规分区域核对（马来暂留老 App）</span></li>
+          <li><b>双端长期并存</b><span class="s">老 App 改名不下架、持续维护马来，单端降本本期不成立</span></li>
           <li><b>重复购买风险</b><span class="s">缓解：订阅去重校验（目标 &lt; 0.5%）</span></li>
         </ul>
       </div>
@@ -485,10 +516,11 @@
       <h3>采用「渐进式灰度迁移」，而非强制一刀切</h3>
       <p style="margin:6px 0 0;color:#2b3040">核心理由：</p>
       <ol>
-        <li>登录方式一致 + 会员权益 1:1 映射 + 国家全覆盖 → 迁移的核心风险都很低。</li>
-        <li>双端并行的长期成本，远高于一次性迁移成本。</li>
-        <li>新 App 已具备「承接老用户 + 拓展新市场」的能力，迁移能让数据与增长归一。</li>
+        <li>登录方式一致 + 会员权益 1:1 映射 → 账号识别与权益延续的核心风险都很低。</li>
+        <li>韩国 / 沙特用户与数据向新 App 归集，新 App 同时承接印尼 / 越南新市场。</li>
+        <li>受合规与平台规则约束，迁移在「账号 + 服务端 + 站外」完成，老 App 无需改动。</li>
       </ol>
+      <p style="margin:12px 0 0;color:#2b3040"><b>本期范围与边界：</b>仅迁移<b>韩国、沙特</b>；<b>马来暂不迁移</b>，继续留在老 App；老 App<b>只改名、不下架、持续维护</b>（本期为双端并存，非迁完即下线）。</p>
     </div>
   </section>
 
@@ -501,14 +533,18 @@
     <div class="stages">
       <div class="stage"><div class="st">阶段 1 · 准备期</div><div class="sn">打通权益中心</div><div class="sd">服务端权益（ASSN v2 + Play RTDN）、账号映射、双重扣费防护、对账工具、客服 SOP</div></div>
       <div class="stage"><div class="st">阶段 2 · 灰度期</div><div class="sn">小范围站外触达</div><div class="sd">韩国 5% 付费用户走短信 / 邮件触达，监控新 App 登录识别率与权益恢复率</div></div>
-      <div class="stage"><div class="st">阶段 3 · 扩大期</div><div class="sn">覆盖核心区</div><div class="sd">扩展至沙特、马来，监控客诉、订阅异常与双重扣费</div></div>
-      <div class="stage"><div class="st">阶段 4 · 全量期</div><div class="sn">全量站外触达</div><div class="sd">全量老用户站外触达 + 静默识别；老 App 保持原样进入维护模式（不加引导）</div></div>
-      <div class="stage"><div class="st">阶段 5 · 复盘期</div><div class="sn">评估收尾</div><div class="sd">迁移识别率、新 App 留存、老订阅存续与下线时点</div></div>
+      <div class="stage"><div class="st">阶段 3 · 扩大期</div><div class="sn">扩展至沙特</div><div class="sd">韩国验证后扩展沙特（马来暂不迁移、保留在老 App），监控客诉、订阅异常与双重扣费</div></div>
+      <div class="stage"><div class="st">阶段 4 · 全量期</div><div class="sn">韩国 / 沙特全量</div><div class="sd">韩国 / 沙特全量站外触达 + 静默识别；老 App 改名保留、继续服务马来（不下架、不加引导）</div></div>
+      <div class="stage"><div class="st">阶段 5 · 复盘期</div><div class="sn">评估收尾</div><div class="sd">迁移识别率、新 App 留存；复盘马来是否进入下一批迁移</div></div>
     </div>
 
     <div class="callout warn">
       <span class="ico">⚠️</span>
       <div><b>前置阻塞（须在灰度期前解决）：</b>① 与苹果 / 谷歌确认「服务端权益跨 App 放权」的合规口径；② 服务端权益中心与账号匹配（以登录方式为唯一键）就绪；③ 法务确认 Push 是否可用于迁移触达；④ 评估 Facebook / AppID 用户的可触达占比。</div>
+    </div>
+    <div class="callout info">
+      <span class="ico">🏷️</span>
+      <div><b>老 App 处置：</b>本期<b>只改名、不下架</b>，继续维护并承载马来用户。改名不影响 Bundle ID / 包名与已有订阅；如需把原品牌名让给新 App，须先完成老 App 改名。</div>
     </div>
   </section>
 
@@ -533,7 +569,7 @@
   </section>
 
   <footer>
-    Dino AI · 新老 App 用户迁移方案 · v1.0 · 更新于 2026-07-09 · 本文档为内部决策参考。
+    Dino AI · 新老 App 用户迁移方案 · v1.2 · 更新于 2026-07-09 · 本文档为内部决策参考。
   </footer>
 
 </div>
