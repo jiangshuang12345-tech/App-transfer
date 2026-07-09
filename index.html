@@ -640,8 +640,8 @@
     <table class="tbl">
       <thead><tr><th>渠道</th><th>能力</th><th>注意</th></tr></thead>
       <tbody>
-        <tr><td class="col-k">Apple · Offer Codes</td><td>批量生成订阅优惠码，用户在新 App 兑换得等值免费期，<b>免费期后自动转为新 App 付费订阅</b></td><td>需在 App Store Connect 配置订阅优惠；新 App 订阅须已上架；<b>采用一次性码（一人一码）</b></td></tr>
-        <tr><td class="col-k">Google Play · 促销码 / 优惠</td><td>同理发放免费 / 折扣期，用户在新 App 兑换</td><td><span class="warnmark">促销码有数量 / 配额限制</span>，千级量级大概率需分批，须确认；促销码<b>本就是一人一码</b></td></tr>
+        <tr><td class="col-k">Apple · Offer Codes</td><td>批量生成订阅优惠码，用户在新 App 兑换得等值免费期，<b>免费期后自动转为新 App 付费订阅</b>。App 外兑换链接：<br><code>https://apps.apple.com/redeem?ctx=offercodes&amp;id=&lt;AppID&gt;&amp;code=&lt;CODE&gt;</code></td><td>需在 App Store Connect 配置订阅优惠；新 App 订阅须已上架；<b>采用一次性码（一人一码）</b></td></tr>
+        <tr><td class="col-k">Google Play · 促销码 / 优惠</td><td>同理发放免费 / 折扣期，用户在新 App 兑换。App 外兑换链接：<br><code>https://play.google.com/redeem?code=&lt;CODE&gt;</code></td><td><span class="warnmark">促销码有数量 / 配额限制</span>，千级量级大概率需分批，须确认；促销码<b>本就是一人一码</b></td></tr>
         <tr><td class="col-k"><span class="no">兜底 · 产研批量写库</span></td><td>基于老付费状态给新 App 账号授予会员</td><td><span class="no">违反卡点 4（两 App 关联），不可用</span></td></tr>
       </tbody>
     </table>
@@ -649,6 +649,11 @@
     <div class="callout info">
       <span class="ico">🔑</span>
       <div><b>优惠码是本约束下的最优解：</b>① 不需要任何管理后台；② 商店原生、天然合规；③ <b>顺带解决「订阅换轨」与「双重扣费」</b>——用户直接在新 App 订阅，老订阅自行取消即可。</div>
+    </div>
+
+    <div class="callout good">
+      <span class="ico">🔗</span>
+      <div><b>兑换链接怎么用（零客户端开发）：</b>两条 URL 是商店原生入口，直接发给用户即可，无需开发页面。<code>&lt;AppID&gt;</code> 是新 App 的 Apple App ID，<b>固定值、填一次</b>；<code>&lt;CODE&gt;</code> 需在后台<b>预先生成</b>、且因「一人一码」<b>逐人替换为其专属码</b>再发送。<b>两个前提：</b>① 订阅商品已上架、优惠码已配好（事项 4 / 6）；② 权益要落到用户账号仍靠服务端收据校验（事项 5，见上文绑定机制）。</div>
     </div>
 
     <div class="callout good">
