@@ -210,6 +210,7 @@
     <a href="#recommend"><span class="num">09</span> 结论与建议</a>
     <a href="#strategy"><span class="num">10</span> 渐进式迁移策略</a>
     <a href="#metrics"><span class="num">11</span> 成功指标</a>
+    <a href="#todo"><span class="num">12</span> 待确认事项清单</a>
   </nav>
 </aside>
 
@@ -221,7 +222,7 @@
     <h1>Dino AI 新老 App 用户迁移方案</h1>
     <p>明确老 App 用户是否迁移至新 App，系统对比「迁移」与「不迁移」两条路径的优势 & 劣势，并给出可落地的渐进式迁移策略与成功指标。</p>
     <div class="meta">
-      <span>版本 v1.9</span>
+      <span>版本 v2.0</span>
       <span>更新 2026-07-09</span>
       <span>迁移：韩国 · 沙特　｜　暂留老 App：马来　｜　新增：印尼 · 越南</span>
     </div>
@@ -767,8 +768,89 @@
     </div>
   </section>
 
+  <!-- 12 todo -->
+  <section id="todo">
+    <div class="sec-head"><span class="k">12</span></div>
+    <h2>待确认事项清单</h2>
+    <p class="lead">开会可逐条过。<b>① 为「阻断级」——不定就无法启动；</b>其余为「推进级」——影响方案细节与转化。</p>
+    <div class="tbl-scroll">
+    <table class="tbl">
+      <thead><tr><th>#</th><th>事项</th><th>归属</th><th>为什么重要</th><th>优先级</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-k">1</td>
+          <td><b>界定「两 App 关联」边界</b>：能否用老 App 用户数据推广新 App / 发优惠码</td>
+          <td>法务</td>
+          <td>决定迁移能否主动做——若不行，只剩自然流入（≈ 不做迁移）</td>
+          <td><span class="no">🔴 阻断</span></td>
+        </tr>
+        <tr>
+          <td class="col-k">2</td>
+          <td><b>价格差处理</b>：免费平移 vs 补差价；过渡期时长、首续促销价定价</td>
+          <td>业务 / 财务</td>
+          <td>老月包价低于新 App，直接影响迁移转化与续费流失（详见 08）</td>
+          <td><span class="warnmark">🟠 高</span></td>
+        </tr>
+        <tr>
+          <td class="col-k">3</td>
+          <td><b>用户数据营销的隐私合规</b>：短信 / 邮件触达的同意基础</td>
+          <td>法务</td>
+          <td>与事项 1 并行，决定触达是否合法可用</td>
+          <td><span class="warnmark">🟠 高</span></td>
+        </tr>
+        <tr>
+          <td class="col-k">4</td>
+          <td><b>新 App 订阅商品已上架、可配置通用优惠码</b>（Apple Offer Codes / Google Play 促销码）</td>
+          <td>产研 / 运营</td>
+          <td>优惠码是唯一合规的授权 + 换轨手段，必须先就绪</td>
+          <td><span class="warnmark">🟠 高</span></td>
+        </tr>
+        <tr>
+          <td class="col-k">5</td>
+          <td><b>Google Play 促销码配额</b>是否够 ~1000（不够则分批）</td>
+          <td>产研 / 运营</td>
+          <td>配额有限，影响韩沙全量发码的节奏</td>
+          <td>🟡 中</td>
+        </tr>
+        <tr>
+          <td class="col-k">6</td>
+          <td><b>Facebook / AppID 用户可触达占比</b>（能否拿到有效邮箱）</td>
+          <td>数据 / 运营</td>
+          <td>直接决定迁移触达的天花板</td>
+          <td>🟡 中</td>
+        </tr>
+        <tr>
+          <td class="col-k">7</td>
+          <td><b>产研一次性「营销名单」导出脚本</b>（韩沙付费用户 + 联系方式）</td>
+          <td>产研</td>
+          <td>触达的输入；依赖事项 1 放行</td>
+          <td>🟡 中</td>
+        </tr>
+        <tr>
+          <td class="col-k">8</td>
+          <td><b>老 App 改名时点</b>：是否要把原品牌名让给新 App</td>
+          <td>产品 / 市场</td>
+          <td>改名不影响订阅，但需协调新 App 用名时点</td>
+          <td>🟢 低</td>
+        </tr>
+        <tr>
+          <td class="col-k">9</td>
+          <td><b>马来后续是否迁移</b>及老 App 最终下架时点</td>
+          <td>业务</td>
+          <td>本期不决策，复盘期评估（详见 10）</td>
+          <td>🟢 低</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout warn">
+      <span class="ico">🧭</span>
+      <div><b>建议顺序：</b>先拿事项 1（法务关联边界）+ 事项 3（隐私合规）的结论 —— 这两条决定「主动迁移到底能不能做」；能做，再推进 2 / 4 / 5 / 6 / 7 的落地细节。</div>
+    </div>
+  </section>
+
   <footer>
-    Dino AI · 新老 App 用户迁移方案 · v1.9 · 更新于 2026-07-09 · 本文档为内部决策参考。
+    Dino AI · 新老 App 用户迁移方案 · v2.0 · 更新于 2026-07-09 · 本文档为内部决策参考。
   </footer>
 
 </div>
