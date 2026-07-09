@@ -138,6 +138,21 @@
   .stage .sn{font-size:15px;font-weight:700;margin:6px 0 4px}
   .stage .sd{font-size:13px;color:var(--muted)}
 
+  /* Flow diagram */
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin-top:18px}
+  .flow .step{flex:1 1 150px;min-width:140px;background:linear-gradient(135deg,#fff,#f7f8ff);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .flow .step .n{font-size:11px;font-weight:800;color:var(--brand);letter-spacing:.05em}
+  .flow .step .tt{font-weight:700;font-size:14px;margin:5px 0 3px;line-height:1.4}
+  .flow .step .dd{font-size:12px;color:var(--muted);line-height:1.5}
+  .flow .arrow{display:flex;align-items:center;color:var(--brand);font-weight:800;font-size:22px;flex:0 0 auto}
+  @media(max-width:640px){.flow{flex-direction:column}.flow .arrow{transform:rotate(90deg);align-self:center}.flow .step{flex:1 1 auto}}
+
+  /* Cost highlight numbers */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:var(--panel);box-shadow:var(--shadow)}
+  .kpi .v{font-size:26px;font-weight:800;color:var(--brand);line-height:1.1}
+  .kpi .l{font-size:12.5px;color:var(--muted);margin-top:6px}
+
   footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
 
   /* Mobile */
@@ -190,9 +205,10 @@
 
   <div class="nav-group">落地建议</div>
   <nav class="nav">
-    <a href="#recommend"><span class="num">07</span> 结论与建议</a>
-    <a href="#strategy"><span class="num">08</span> 渐进式迁移策略</a>
-    <a href="#metrics"><span class="num">09</span> 成功指标</a>
+    <a href="#cost"><span class="num">07</span> 成本评估与轻量迁移</a>
+    <a href="#recommend"><span class="num">08</span> 结论与建议</a>
+    <a href="#strategy"><span class="num">09</span> 渐进式迁移策略</a>
+    <a href="#metrics"><span class="num">10</span> 成功指标</a>
   </nav>
 </aside>
 
@@ -204,7 +220,7 @@
     <h1>Dino AI 新老 App 用户迁移方案</h1>
     <p>明确老 App 用户是否迁移至新 App，系统对比「迁移」与「不迁移」两条路径的优势 & 劣势，并给出可落地的渐进式迁移策略与成功指标。</p>
     <div class="meta">
-      <span>版本 v1.2</span>
+      <span>版本 v1.3</span>
       <span>更新 2026-07-09</span>
       <span>迁移：韩国 · 沙特　｜　暂留老 App：马来　｜　新增：印尼 · 越南</span>
     </div>
@@ -242,9 +258,9 @@
       <div class="col-box con">
         <h4>🔴 为什么值得迁</h4>
         <ul>
-          <li><b>双端并行成本高</b><span class="s">开发 / 客服 / 运营长期双份投入，边际效率低</span></li>
-          <li><b>数据割裂</b><span class="s">用户与付费数据分散两端，难形成统一增长视图</span></li>
-          <li><b>存量无法激活</b><span class="s">老用户无法导入印尼 / 越南等新市场增长体系</span></li>
+          <li><b>新 App 是战略未来</b><span class="s">独占印尼 / 越南 + 新增周包，不迁则韩沙用户被冻结在只减不增的老 App</span></li>
+          <li><b>数据 / 增长归集</b><span class="s">韩沙用户与付费数据汇入新 App，统一投放与分析</span></li>
+          <li><b>成本已躲不掉</b><span class="s">既然要维护马来 + 保留老 App，「不迁韩沙」只剩劣势、无额外收益</span></li>
         </ul>
       </div>
     </div>
@@ -507,26 +523,102 @@
     </div>
   </section>
 
-  <!-- 07 recommend -->
-  <section id="recommend">
+  <!-- 07 cost -->
+  <section id="cost">
     <div class="sec-head"><span class="k">07</span></div>
+    <h2>成本评估与轻量迁移建议</h2>
+    <p class="lead">加入新前提后重新算账：<b>老 App 不再投放、新用户全部进新 App、老 App 付费用户仅约 1500（韩沙为其子集）</b>。结论是——别把它当系统工程，用轻量方式迁。</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="v">≈1500</div><div class="l">老 App 付费用户总数（含马来）</div></div>
+      <div class="kpi"><div class="v">≈600–1000</div><div class="l">值得迁移的韩沙付费用户（估算）</div></div>
+      <div class="kpi"><div class="v">衰减资产</div><div class="l">老 App 停投放 + 新用户全去新 App</div></div>
+    </div>
+
+    <div class="callout good">
+      <span class="ico">🎯</span>
+      <div><b>核心判断：</b>盘子只有千级付费用户，<b>不值得建重型服务端权益系统</b>。应把迁移当成一次「几百人的老付费用户召回」，走 <b>「运营触达 + 新 App 后台批量加会员」</b> 的轻量路径。</div>
+    </div>
+
+    <h3>产研成本：重型 vs 轻型</h3>
+    <div class="tbl-scroll">
+    <table class="tbl">
+      <thead><tr><th>方案</th><th>要做的事</th><th>粗估研发量</th><th>适配盘子</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-k"><span class="no">重型</span><br><span style="font-size:12px;color:var(--muted)">原方案</span></td>
+          <td>服务端权益中心（App Store Server Notifications v2 + Google Play RTDN + 收据校验）、账号映射、跨 App 放权、双重扣费防护、跨国 × 双商店 × 5 登录方式 QA 矩阵</td>
+          <td><b>约 2–4 人月</b></td>
+          <td>万级以上付费才划算</td>
+        </tr>
+        <tr>
+          <td class="col-k"><span class="yes">轻型</span><br><span style="font-size:12px;color:var(--muted)">推荐</span></td>
+          <td>新 App 登录识别老账号并恢复学习进度（账号已打通则很轻）+ 后台<b>批量 / 手动加会员</b>（CRM 已有「手动加会员」待评估功能）+ 一份对账名单</td>
+          <td><b>约 0.5–1 人月</b></td>
+          <td>千级付费，正合适</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="callout info">
+      <span class="ico">💡</span>
+      <div><b>为什么轻：</b>因为老 App 不能引导、又不下架，<b>老 App 侧几乎不用动</b>（顶多改名），省掉了老 App 开发；真正要做的只在新 App 侧 + 一个简单的加会员后台。</div>
+    </div>
+
+    <h3>业务成本（量小、基本可人工兜底）</h3>
+    <div class="tbl-scroll">
+    <table class="tbl">
+      <thead><tr><th>项目</th><th>说明</th><th>量级</th></tr></thead>
+      <tbody>
+        <tr><td class="col-k">触达成本</td><td>CRM 导名单 → 短信 / 邮件 / 外呼，一次性</td><td><span class="yes">很低</span></td></tr>
+        <tr><td class="col-k">迁移激励</td><td>等值会员 + 加赠（如送几周周包）</td><td><span class="yes">可忽略</span></td></tr>
+        <tr><td class="col-k">客服 / SOP</td><td>千级量级可人工兜底，无需自动化</td><td><span class="yes">低</span></td></tr>
+        <tr><td class="col-k">双重扣费（须处理）</td><td>给了新 App 会员、老 App 订阅仍在续订 → 用户白交钱</td><td><span class="warnmark">需话术兜底</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>轻量迁移流程</h3>
+    <div class="flow">
+      <div class="step"><div class="n">STEP 1</div><div class="tt">CRM 导名单</div><div class="dd">筛出韩沙付费老用户及联系方式</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">STEP 2</div><div class="tt">站外触达</div><div class="dd">短信 / 邮件 / 外呼，告知搬新 App</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">STEP 3</div><div class="tt">后台批量加会员</div><div class="dd">新 App 手动给等值 + 加赠会员</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">STEP 4</div><div class="tt">提示取消老续订</div><div class="dd">附管理订阅链接，避免双扣</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">STEP 5</div><div class="tt">到期走新 SKU</div><div class="dd">在新 App 以新 SKU 续费</div></div>
+    </div>
+
+    <div class="callout warn">
+      <span class="ico">⚠️</span>
+      <div><b>两个关键点：</b>① 用「后台手动加会员」而非「跨 App 订阅放权」，<b>顺带绕开了卡点 2 的商店合规灰区</b>，最省事；② 触达话术必须<b>提示用户取消老 App 自动续订</b>，或让加赠时长盖过其剩余订阅期，防止白交钱。<b>暂不建</b> ASSN / RTDN 权益中心——等新 App 付费盘子做大、或马来也要迁时再评估。</div>
+    </div>
+  </section>
+
+  <!-- 08 recommend -->
+  <section id="recommend">
+    <div class="sec-head"><span class="k">08</span></div>
     <h2>结论与建议</h2>
     <div class="rec">
       <span class="badge">推荐执行迁移</span>
       <h3>采用「渐进式灰度迁移」，而非强制一刀切</h3>
       <p style="margin:6px 0 0;color:#2b3040">核心理由：</p>
       <ol>
+        <li>新 App 是战略未来（独占印尼 / 越南 + 新增周包），不迁等于把韩沙用户冻结在只减不增的老 App 上。</li>
         <li>登录方式一致 + 会员权益 1:1 映射 → 账号识别与权益延续的核心风险都很低。</li>
-        <li>韩国 / 沙特用户与数据向新 App 归集，新 App 同时承接印尼 / 越南新市场。</li>
-        <li>受合规与平台规则约束，迁移在「账号 + 服务端 + 站外」完成，老 App 无需改动。</li>
+        <li>既然已决定「维护马来 + 保留老 App」，双端成本躲不掉，那「不迁韩沙」就只剩劣势、无额外收益。</li>
       </ol>
-      <p style="margin:12px 0 0;color:#2b3040"><b>本期范围与边界：</b>仅迁移<b>韩国、沙特</b>；<b>马来暂不迁移</b>，继续留在老 App；老 App<b>只改名、不下架、持续维护</b>（本期为双端并存，非迁完即下线）。</p>
+      <p style="margin:12px 0 0;color:#2b3040"><b>但要「轻着迁」：</b>付费用户仅约 1500（韩沙为子集），<b>不建重型权益系统</b>，走「运营触达 + 后台批量加会员」的轻量路径（详见 07）。</p>
+      <p style="margin:10px 0 0;color:#2b3040"><b>本期范围与边界：</b>仅迁移<b>韩国、沙特</b>；<b>马来暂不迁移</b>、留老 App；老 App<b>不再投放、不下架、只改名</b>，作为衰减资产自然萎缩；<b>新用户全部进新 App</b>。</p>
+      <p style="margin:10px 0 0;color:#2b3040"><b>唯一会改口的情形：</b>若苹果 / 谷歌否决跨 App 权益放权且自然到期重订流失过高 —— 但本期采用「后台手动加会员」已绕开该风险，方向不变。</p>
     </div>
   </section>
 
-  <!-- 08 strategy -->
+  <!-- 09 strategy -->
   <section id="strategy">
-    <div class="sec-head"><span class="k">08</span></div>
+    <div class="sec-head"><span class="k">09</span></div>
     <h2>渐进式迁移策略</h2>
     <p class="lead">分阶段推进，先小范围验证再全量；<b>所有触达均在老 App 之外进行</b>，迁移在账号与服务端完成。</p>
 
@@ -548,9 +640,9 @@
     </div>
   </section>
 
-  <!-- 09 metrics -->
+  <!-- 10 metrics -->
   <section id="metrics">
-    <div class="sec-head"><span class="k">09</span></div>
+    <div class="sec-head"><span class="k">10</span></div>
     <h2>成功指标（参考）</h2>
     <p class="lead">用于灰度与全量阶段的效果衡量与放量决策。</p>
     <div class="tbl-scroll">
@@ -569,7 +661,7 @@
   </section>
 
   <footer>
-    Dino AI · 新老 App 用户迁移方案 · v1.2 · 更新于 2026-07-09 · 本文档为内部决策参考。
+    Dino AI · 新老 App 用户迁移方案 · v1.3 · 更新于 2026-07-09 · 本文档为内部决策参考。
   </footer>
 
 </div>
