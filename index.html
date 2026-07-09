@@ -221,7 +221,7 @@
     <h1>Dino AI 新老 App 用户迁移方案</h1>
     <p>明确老 App 用户是否迁移至新 App，系统对比「迁移」与「不迁移」两条路径的优势 & 劣势，并给出可落地的渐进式迁移策略与成功指标。</p>
     <div class="meta">
-      <span>版本 v1.7</span>
+      <span>版本 v1.8</span>
       <span>更新 2026-07-09</span>
       <span>迁移：韩国 · 沙特　｜　暂留老 App：马来　｜　新增：印尼 · 越南</span>
     </div>
@@ -243,7 +243,7 @@
     <div class="callout warn">
       <span class="ico">⚠️</span>
       <div>
-        <b>两个关键卡点（详见 05 / 06）改变了迁移「怎么做」：</b>① 合规——<b>老 App 内不可做任何引导</b>；② 平台规则——<b>订阅 SKU 不能跨 App 迁移</b>。因此机制由「老 App 内漏斗」重构为 <b>「账号级静默迁移 + 服务端权益 + 站外触达」</b>。
+        <b>三个关键卡点（详见 05 / 06）改变了迁移「怎么做」：</b>① 合规——<b>老 App 内不可做任何引导</b>；② 平台规则——<b>订阅 SKU 不能跨 App 迁移</b>；③ 内容不同——<b>学习进度无法迁移，内容需重新开始</b>。因此机制由「老 App 内漏斗」重构为 <b>「账号级静默迁移（仅账号 + 会员权益）+ 站外触达」</b>。
       </div>
     </div>
 
@@ -363,7 +363,7 @@
         <ul>
           <li><b>账号匹配失败</b><span class="s">缓解：以登录方式为唯一键映射 + 人工兜底核对</span></li>
           <li><b>订阅态迁移复杂</b><span class="s">缓解：苹果 / Google / 第三方支付按平台规则迁移，提前对齐</span></li>
-          <li><b>进度 / 数据丢失</b><span class="s">缓解：迁移前全量备份 + 抽样对账（≥98% 一致率）</span></li>
+          <li><b>学习进度不迁移</b><span class="s">两 App 内容不同、进度无法同步，用户需在新 App 重新开始 → 靠会员权益 + 加赠弥补迁移意愿</span></li>
           <li><b>迁移感知打断</b><span class="s">缓解：一键迁移引导页，减少操作步骤</span></li>
           <li><b>老用户流失</b><span class="s">缓解：迁移激励，如赠送周包 / 续费折扣</span></li>
           <li><b>客服咨询上升</b><span class="s">缓解：提前备 FAQ、客服 SOP、迁移专属入口</span></li>
@@ -434,7 +434,7 @@
   <section id="blockers">
     <div class="sec-head"><span class="k">05</span></div>
     <h2>关键卡点评估</h2>
-    <p class="lead">两个来自合规与平台规则的硬约束，会实质性改变迁移的手段与机制，须在方案里正面处理。</p>
+    <p class="lead">三个来自合规、平台规则与内容差异的硬约束，会实质性改变迁移的手段与机制，须在方案里正面处理。</p>
 
     <h3>卡点 1 · 老 App 内不可做任何引导（合规）</h3>
     <div class="callout warn">
@@ -443,7 +443,7 @@
     </div>
     <div class="callout good">
       <span class="ico">✅</span>
-      <div><b>为什么仍然可行：</b>① 登录方式完全一致 → 用户在新 App 用同一账号登录时，后端自动识别为老用户并恢复进度 / 权益，<b>全程无需在老 App 内做任何动作，天然合规</b>；② 后端已有用户联系方式（手机号 / 邮箱）→ 可走老 App 之外的站外触达。</div>
+      <div><b>为什么仍然可行：</b>① 登录方式完全一致 → 用户在新 App 用同一账号登录时，后端可识别为老用户并延续会员权益（<b>学习进度不迁移，内容重新开始</b>），<b>全程无需在老 App 内做任何动作，天然合规</b>；② 后端已有用户联系方式（手机号 / 邮箱）→ 可走老 App 之外的站外触达。</div>
     </div>
 
     <h3>站外触达覆盖度（按注册方式）</h3>
@@ -503,6 +503,17 @@
       <span class="ico">🔑</span>
       <div><b>推荐组合：以 A 为主、B 兜底。</b>搭建服务端权益中心作为唯一事实来源，新 App 登录即按账号放权；新增付费一律走新 App 自有 SKU（含新增周包）；老订阅到期 / 取消后在新 App 内以新 SKU 续费。<b>并做双重扣费防护</b>：新 App 卖 SKU 前，后端先查该账号是否已有老 App 有效权益，有则显示「已是会员」禁止重复购买。</div>
     </div>
+
+    <h3>卡点 3 · 学习进度无法迁移（两 App 内容不同）</h3>
+    <div class="callout warn">
+      <span class="ico">📚</span>
+      <div><b>硬约束：</b>新老 App 承载的内容不同，<b>学习进度无法同步 / 迁移</b>。迁移只能带走「账号 + 会员权益」，用户到新 App 需<b>从头开始学习内容</b>。</div>
+    </div>
+    <ul style="font-size:14px;color:#3a4150">
+      <li><b>好处（成本侧）：</b>不需要做任何进度数据迁移 / 映射开发，方案更轻。</li>
+      <li><b>代价（业务侧）：</b>进度清零抬高了迁移门槛、降低迁移意愿，尤其是学习时长长的老用户 → <b>首要流失点从「价格」扩大到「进度损失」</b>。</li>
+      <li><b>缓解：</b>用<b>会员权益免费平移 + 加赠</b>（如多送时长 / 周包）补偿；触达话术坦诚说明「内容升级、需重新开始」，并突出新 App 的新内容与新市场价值。</li>
+    </ul>
   </section>
 
   <!-- 06 mechanism -->
@@ -514,13 +525,13 @@
     <div class="stages">
       <div class="stage"><div class="st">① 权益中心</div><div class="sn">服务端唯一事实源</div><div class="sd">接 App Store Server Notifications v2 + Google Play RTDN，实时同步账号付费状态与到期时间</div></div>
       <div class="stage"><div class="st">② 站外触达</div><div class="sn">老 App 之外拉动下载</div><div class="sd">短信 / 邮件 / 外呼 / ASO · 社媒，不在老 App 内做任何引导</div></div>
-      <div class="stage"><div class="st">③ 静默识别</div><div class="sn">同账号登录即识别</div><div class="sd">登录方式一致，新 App 登录后按后端权益恢复进度并放权，无需老 App 动作</div></div>
+      <div class="stage"><div class="st">③ 静默识别</div><div class="sn">同账号登录即识别</div><div class="sd">登录方式一致，新 App 登录后按后端权益放权；学习进度不迁移、内容重新开始，无需老 App 动作</div></div>
       <div class="stage"><div class="st">④ 换轨续费</div><div class="sn">新 App 自有 SKU</div><div class="sd">老订阅存续期照常放权；到期 / 取消后在新 App 内以新 SKU 续费，含双重扣费防护</div></div>
     </div>
 
     <div class="callout good">
       <span class="ico">🧭</span>
-      <div><b>一句话机制：</b>老 App 保持原样、不加任何引导；用户被站外触达吸引下载新 App，用同一账号登录后被后端「认出来」，权益与进度自动延续——迁移在<b>账号与服务端</b>完成，而非在老 App 界面上完成。</div>
+      <div><b>一句话机制：</b>老 App 保持原样、不加任何引导；用户被站外触达吸引下载新 App，用同一账号登录后被后端「认出来」，<b>会员权益延续（学习进度不迁移、内容重新开始）</b>——迁移在<b>账号与服务端</b>完成，而非在老 App 界面上完成。</div>
     </div>
     <div class="callout warn">
       <span class="ico">📌</span>
@@ -558,7 +569,7 @@
         </tr>
         <tr>
           <td class="col-k"><span class="yes">轻型</span><br><span style="font-size:12px;color:var(--muted)">推荐</span></td>
-          <td>产研<b>一次性脚本</b>从老库导出韩沙付费名单 + 联系方式；授权换轨优先用<b>商店订阅优惠码</b>（Apple Offer Codes / Google Play 促销码），兜底用产研一次性批量写库；新 App 同账号登录恢复学习进度（账号打通则很轻）</td>
+          <td>产研<b>一次性脚本</b>从老库导出韩沙付费名单 + 联系方式；授权换轨优先用<b>商店订阅优惠码</b>（Apple Offer Codes / Google Play 促销码），兜底用产研一次性批量写库；<b>学习进度不迁移</b>（两 App 内容不同），无需进度同步开发</td>
           <td><b>约 0.5–1 人月</b></td>
           <td>千级付费，正合适</td>
         </tr>
@@ -703,7 +714,7 @@
     <p class="lead">按 07 的轻量路径分阶段推进，先小范围验证再全量；<b>所有触达均在老 App 之外进行</b>。</p>
 
     <div class="stages">
-      <div class="stage"><div class="st">阶段 1 · 准备期</div><div class="sn">产研 + 商店配置</div><div class="sd">产研导名单脚本、新 App 同账号登录/进度恢复验证、商店订阅优惠码配置、话术与客服 SOP</div></div>
+      <div class="stage"><div class="st">阶段 1 · 准备期</div><div class="sn">产研 + 商店配置</div><div class="sd">产研导名单脚本、新 App 同账号登录验证（进度不迁移）、商店订阅优惠码配置、话术与客服 SOP</div></div>
       <div class="stage"><div class="st">阶段 2 · 灰度期</div><div class="sn">韩国小批量试发码</div><div class="sd">给韩国一小批付费用户发优惠码 + 短信/邮件触达，监控兑换率与新 App 续费转化</div></div>
       <div class="stage"><div class="st">阶段 3 · 扩大期</div><div class="sn">扩展至沙特</div><div class="sd">韩国验证后扩展沙特（马来暂不迁移、留老 App），监控兑换率、客诉与双重扣费</div></div>
       <div class="stage"><div class="st">阶段 4 · 全量期</div><div class="sn">韩国 / 沙特全量</div><div class="sd">韩沙付费用户全量发码触达；老 App 改名保留、继续服务马来（不下架、不加引导、不再投放）</div></div>
@@ -712,7 +723,7 @@
 
     <div class="callout warn">
       <span class="ico">⚠️</span>
-      <div><b>前置阻塞（须在灰度期前解决）：</b>① 新 App 订阅商品已上架、可配置优惠码；② 确认 Google Play 促销码配额是否够用（不够则分批或走产研写库兜底）；③ 产研确认新 App 能否同账号登录并恢复学习进度；④ 评估 Facebook / AppID 用户可触达占比。</div>
+      <div><b>前置阻塞（须在灰度期前解决）：</b>① 新 App 订阅商品已上架、可配置优惠码；② 确认 Google Play 促销码配额是否够用（不够则分批或走产研写库兜底）；③ 产研确认新 App 能否同账号登录（学习进度不迁移，无需同步）；④ 评估 Facebook / AppID 用户可触达占比。</div>
     </div>
     <div class="callout info">
       <span class="ico">🏷️</span>
@@ -732,7 +743,6 @@
         <tr><td class="col-k">站外触达可达率</td><td><span class="yes">≥ 80%</span>（有手机号 / 有效邮箱占比）</td></tr>
         <tr><td class="col-k">优惠码兑换率</td><td><span class="yes">≥ 40%</span>（兑换 / 已触达，灰度后校准）</td></tr>
         <tr><td class="col-k">新 App 登录账号识别成功率</td><td><span class="yes">≥ 99%</span></td></tr>
-        <tr><td class="col-k">进度恢复一致率</td><td><span class="yes">≥ 98%</span>（抽样对账）</td></tr>
         <tr><td class="col-k">免费期后新 App 续费转化</td><td>灰度校准（关注是否白发码）</td></tr>
         <tr><td class="col-k">双重扣费投诉</td><td><span class="yes">≈ 0</span>（话术提示取消老续订）</td></tr>
         <tr><td class="col-k">迁移用户 D7 留存</td><td>≥ 自然新用户同期</td></tr>
@@ -742,7 +752,7 @@
   </section>
 
   <footer>
-    Dino AI · 新老 App 用户迁移方案 · v1.7 · 更新于 2026-07-09 · 本文档为内部决策参考。
+    Dino AI · 新老 App 用户迁移方案 · v1.8 · 更新于 2026-07-09 · 本文档为内部决策参考。
   </footer>
 
 </div>
