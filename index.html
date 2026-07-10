@@ -663,7 +663,7 @@
 
     <h3>轻量迁移流程</h3>
     <div class="flow">
-      <div class="step"><div class="n">STEP 1</div><div class="tt">产研导名单</div><div class="dd">一次性脚本导出韩沙付费用户 + 联系方式 + 专属 <code>promo_code</code> 列</div></div>
+      <div class="step"><div class="n">STEP 1</div><div class="tt">产研导名单</div><div class="dd">一次性脚本导出韩沙付费用户 + 联系方式 + 专属 <code>promo_code</code> + <code>platform</code>（iOS/安卓）列</div></div>
       <div class="arrow">→</div>
       <div class="step"><div class="n">STEP 2</div><div class="tt">生成优惠码</div><div class="dd">App Store Connect / Play Console 批量生成<b>一次性码</b>，与用户一一对应</div></div>
       <div class="arrow">→</div>
@@ -730,12 +730,12 @@
     <h3>触达话术模板（引导搬到 Dino AI · 一人一码）</h3>
     <div class="callout danger">
       <span class="ico">⚖️</span>
-      <div><b>合规前置：</b>以下话术涉及<b>用老 App 用户数据触达</b>且需<b>措辞谨慎</b>——最终文案必须经<b>法务确认</b>（事项 1 关联边界 / 事项 3 隐私同意）。落地时把 <span class="var">{昵称}</span>、<span class="var">{兑换码}</span>、<span class="var">{兑换链接}</span> 逐人替换；<b>目标用户在韩国 / 沙特，须本地化为韩语 / 阿拉伯语</b>，下方中文为母版。</div>
+      <div><b>合规前置：</b>以下话术涉及<b>用老 App 用户数据触达</b>且需<b>措辞谨慎</b>——最终文案必须经<b>法务确认</b>（事项 1 关联边界 / 事项 3 隐私同意）。落地时替换变量：<b>逐人</b> <span class="var">{昵称}</span> / <span class="var">{兑换码}</span> / <span class="var">{兑换链接}</span> / <span class="var">{兑换短链}</span> / <span class="var">{下载链接}</span> / <span class="var">{下载短链}</span>（后两者按用户 <code>platform</code> 填对应商店链接）/ <span class="var">{到期日}</span>；<b>全局固定</b> <span class="var">{免费期}</span> / <span class="var">{续费价}</span>；<b>兜底（拿不到平台时邮件双链）</b> <span class="var">{下载链接_iOS}</span> / <span class="var">{下载链接_安卓}</span>。<b>目标用户在韩国 / 沙特，须本地化为韩语 / 阿拉伯语</b>，下方中文为母版。</div>
     </div>
 
     <div class="callout info">
       <span class="ico">🎯</span>
-      <div><b>话术要传达 5 件事：</b>① Dino AI 全新升级、值得搬，引导<b>搜索「Dino AI」下载新版 App</b>；② 点专属链接<b>免费领会员</b>（等值 + 加赠）；③ 请在<b>常用手机、同一个 App Store / Google Play 账号</b>上兑换并打开新 App；④ <b>如实披露自动续费规则</b>——免费期 <span class="var">{免费期}</span> 结束后按新价 <span class="var">{续费价}</span> 自动续费，可随时取消；⑤ 记得<b>取消旧订阅</b>，避免重复扣费。</div>
+      <div><b>话术要传达 5 件事：</b>① Dino AI 全新升级、值得搬；② 引导按 <b>「先兑换 → 再下载 → 后注册」</b> 三步操作——先点专属链接<b>免费领会员</b>（等值 + 加赠），再搜索「Dino AI」下载新版，最后打开用手机号注册即到账；③ 请全程用<b>常用手机、同一个 App Store / Google Play 账号</b>；④ <b>如实披露自动续费规则</b>——免费期 <span class="var">{免费期}</span> 结束后按新价 <span class="var">{续费价}</span> 自动续费，可随时取消；⑤ 记得<b>取消旧订阅</b>，避免重复扣费。</div>
     </div>
 
     <div class="callout danger">
@@ -743,12 +743,18 @@
       <div><b>自动续费披露是硬要求：</b>Apple / Google 及多地法规都要求在触达 / 兑换环节<b>明确告知</b>「免费期结束后自动续费、续费价格、如何取消」。因此所有对外话术<b>必须包含</b>这段说明——不能只说"免费领"而隐瞒后续自动扣费，否则易引发投诉、退款与合规风险。</div>
     </div>
 
+    <div class="callout info">
+      <span class="ico">🔗</span>
+      <div><b>下载链接策略（优先按设备发单条）：</b>下载链接是<b>全局固定两条</b>（非一人一码）：iOS 用 <code>https://apps.apple.com/app/id&lt;AppID&gt;</code>、安卓用 <code>https://play.google.com/store/apps/details?id=&lt;包名&gt;</code>。
+      <br>· <b>首选（名单能区分设备）：</b>导出名单带 <code>platform</code> 列 → <b>邮件和短信都只放该用户平台对应的那一条</b>下载链接（<span class="var">{下载链接}</span> / 短信用 <span class="var">{下载短链}</span>），最干净、免用户自选。
+      <br>· <b>兜底（拿不到平台）：</b>邮件里<b>并列两条</b>「iPhone 点这里 / 安卓点这里」（<span class="var">{下载链接_iOS}</span> / <span class="var">{下载链接_安卓}</span>）；短信仍建议想办法拿到平台以发单条，避免过长。
+      <br>· <b>短信控长：</b>无论哪种，短信都把链接换成<b>短链</b>（<span class="var">{兑换短链}</span> / <span class="var">{下载短链}</span>）并精简措辞。</div>
+    </div>
+
     <div class="scripts">
       <div class="script">
-        <div class="sh">📱 短信 · 首次触达 <span class="badge">含续费披露</span></div>
-        <div class="sb"><span class="var">{昵称}</span>您好，Dino AI 全新升级上线！请在 App Store / Google Play <b>搜索「Dino AI」下载新版</b>，并点击专属链接免费领会员（含额外赠送时长）：
-<span class="var">{兑换链接}</span>
-免费期 <span class="var">{免费期}</span> 后按 <span class="var">{续费价}</span> 自动续费，可随时取消。请用常用手机、同一应用商店账号打开。退订回复 TD。</div>
+        <div class="sh">📱 短信 · 首次触达 <span class="badge">短链 · 平台单链</span></div>
+        <div class="sb"><span class="var">{昵称}</span>您好，Dino AI 全新升级！① 先领会员(含赠送)：<span class="var">{兑换短链}</span> ② 下载新版：<span class="var">{下载短链}</span> ③ 打开注册即到账。免费期 <span class="var">{免费期}</span> 后按 <span class="var">{续费价}</span> 自动续费，可取消。请用同一应用商店账号。退订回 TD。</div>
       </div>
 
       <div class="script">
@@ -759,12 +765,13 @@
 
 Dino AI 已全新升级，带来更丰富的学习内容与体验。为回馈您，我们为您准备了<b>专属会员礼包</b>（等值权益 + 额外赠送时长）。
 
-▶ 三步领取：
-1. 在 App Store / Google Play 搜索「Dino AI」下载新版；
-   （请使用您<b>常用手机</b>、及<b>平时购买用的同一个</b> App Store / Google Play 账号）
-2. 打开专属链接兑换：<span class="var">{兑换链接}</span>
+▶ 三步搬家（顺序：先兑换 → 再下载 → 后注册）：
+1. <b>先兑换</b>：打开专属链接领取会员礼包：<span class="var">{兑换链接}</span>
    或在兑换页输入兑换码：<span class="var">{兑换码}</span>
-3. 打开 Dino AI，用手机号注册 / 登录，会员将自动到账。
+   （请使用您<b>常用手机</b>、及<b>平时购买用的同一个</b> App Store / Google Play 账号）
+2. <b>再下载</b>：点此下载 Dino AI 新版：<span class="var">{下载链接}</span>
+   （名单已区分设备，按您的机型填对应链接；若无法区分则并列 iPhone / 安卓两条）
+3. <b>后注册</b>：打开 Dino AI，用手机号注册 / 登录，会员将自动到账。
 
 📜 自动续费说明（请知悉）：
 · 免费期为 <span class="var">{免费期}</span>，期内完全免费；
@@ -785,7 +792,7 @@ Dino AI 团队</div>
         <div class="sh">📞 外呼 · 通话要点 <span class="badge">口播提纲</span></div>
         <div class="sb">1. 自报＆核身：您好，这里是 Dino AI 团队，请问是 <span class="var">{昵称}</span> 吗？
 2. 目的：Dino AI 全新升级，给您准备了专属会员礼包，免费领取。
-3. 引导：请在 App Store / Google Play 搜索「Dino AI」下载新版；稍后给您发条短信/邮件，点里面的专属链接就能领；请用常用手机、同一个应用商店账号。
+3. 引导（顺序：先兑换→再下载→后注册）：稍后给您发条短信/邮件，① 先点里面的专属链接领会员；② 再到 App Store / Google Play 搜索「Dino AI」下载；③ 打开注册即到账。请用常用手机、同一个应用商店账号。
 4. 续费披露：免费期 {免费期} 内不收费，之后按新版价格 {续费价} 自动续费，您可随时取消。
 5. 关键提醒：领取后记得在手机「订阅」里取消旧版自动续订，避免多扣费。
 6. 答疑：进度会从新版重新开始；如兑换遇到问题可随时联系客服。
@@ -794,9 +801,7 @@ Dino AI 团队</div>
 
       <div class="script">
         <div class="sh">🔁 短信 · 催兑提醒（未兑换） <span class="badge">D+3 / D+7</span></div>
-        <div class="sb"><span class="var">{昵称}</span>，您的 Dino AI 专属会员礼包即将到期，还没领哦～ 搜索「Dino AI」下载新版，点击一键领取（含赠送时长）：
-<span class="var">{兑换链接}</span>
-过期不候，记得同一应用商店账号打开。</div>
+        <div class="sb"><span class="var">{昵称}</span>，您的 Dino AI 会员礼包即将过期！① 领取：<span class="var">{兑换短链}</span> ② 下载：<span class="var">{下载短链}</span> ③ 打开注册即到账。过期不候，记得用同一应用商店账号。</div>
       </div>
 
       <div class="script">
@@ -998,9 +1003,9 @@ Dino AI 团队</div>
         </tr>
         <tr>
           <td class="col-k">8</td>
-          <td><b>产研一次性「营销名单」导出脚本</b>（韩沙付费用户 + 联系方式 + 专属 <code>promo_code</code> 列）</td>
+          <td><b>产研一次性「营销名单」导出脚本</b>（韩沙付费用户 + 联系方式 + 专属 <code>promo_code</code> + <code>platform</code> 设备类型列）</td>
           <td>产研</td>
-          <td>触达的输入；<b>一人一码</b>需名单里逐人对应专属码；依赖事项 1 放行</td>
+          <td>触达的输入；<b>一人一码</b>需逐人对应专属码；<b>platform</b> 用于按设备发对应下载链接（拿不到则邮件并列双链）；依赖事项 1 放行</td>
           <td>🟡 中</td>
         </tr>
         <tr>
